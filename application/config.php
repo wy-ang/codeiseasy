@@ -87,7 +87,7 @@ return [
     // URL参数方式 0 按名称成对解析 1 按顺序解析
     'url_param_type'         => 0,
     // 是否开启路由
-    'url_route_on'           => true,
+    'url_route_on'           => false,
     // 路由使用完整匹配
     'route_complete_match'   => false,
     // 路由配置文件（支持配置多个）
@@ -125,7 +125,7 @@ return [
         // 模板引擎类型 支持 php think 支持扩展
         'type'         => 'Think',
         // 默认模板渲染规则 1 解析为小写+下划线 2 全部转换小写
-        'auto_rule'    => 1,
+        'auto_rule'    => 2,
         // 模板路径
         'view_path'    => '',
         // 模板后缀
