@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+    <script src="__PUBLIC__/jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/layui/layui.js"></script>
+</head>
+<body>
+<div id="list"></div>
+<script>
+    $.ajax({
+        url: '../index/getUser',
+        type:'get',
+        dataType:'json',
+        success: function (res) {
+            var data = res.data;
+            var card = [];
+            for(var i = 0;i<data.length;i++){
+                card.push('<div class="layui-card" style="margin: 0">');
+                card.push('<div class="layui-card-header">'+ data[i].name +'</div>');
+                card.push('<div class="layui-card-body">'+ data[i].remark +'</div>');
+                card.push('</div>');
+            }
+            $('#list').html(card.join(''));
+        }
+    })
+</script>
+</body>
+</html>

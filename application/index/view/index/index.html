@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+    <script src="__PUBLIC__/jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/layui/layui.js"></script>
 </head>
 <body>
-    <h1>hello work</h1>
-
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">微信</label>
+        <div class="layui-input-block">
+            <input type="text" name="wechat" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <textarea name="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script>
+    $('#submit').click(function () {
+        var name = $('#name').val();
+        $.ajax({
+            url: './index/index/addUser',
+            type:'POST',
+            dataType:'json',
+            data: {
+                name: name
+            },
+            success: function (res) {
+                console.log(res);
+            }
+        });
+    });
+    $.ajax({
+        url: './index/index/getUser',
+        type:'get',
+        dataType:'json',
+        success: function (res) {
+            console.log(res);
+        }
+    })
+</script>
 </body>
 </html>
