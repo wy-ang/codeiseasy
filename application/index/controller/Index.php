@@ -3,7 +3,7 @@
 namespace app\index\controller;
 
 use think\Controller;
-use app\index\model\UserModel;
+use app\index\model\MenuModel;
 
 class Index extends Controller
 {
@@ -13,20 +13,10 @@ class Index extends Controller
         return $this->fetch();
     }
 
-    public function addUser()
+    public function menuList()
     {
-        $name = input('param.name');
-        if (!empty($name)){
-            $user = new UserModel();
-            $data = $user->addUser($name);
-            return json($data);
-        }
-    }
-
-    public function getUser()
-    {
-        $user = new UserModel();
-        $users = $user->getUser();
-        return json(['code' => 200, 'data' => $users]);
+        $menu = new MenuModel();
+        $data = $menu->menuList();
+        return json($data);
     }
 }

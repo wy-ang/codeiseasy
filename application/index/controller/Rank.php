@@ -1,16 +1,16 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: wangyang
- * Date: 2019/7/21
- * Time: 13:36
+ * User: wyang
+ * Date: 2019/7/23
+ * Time: 16:10
  */
 
 namespace app\index\controller;
 
 use think\Controller;
 
-class userList extends Controller
+class Rank extends Controller
 {
     public function index()
     {

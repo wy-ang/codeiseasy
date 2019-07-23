@@ -1,0 +1,11 @@
+.layui-header {
+    background-color: #393D49
+}
+
+.layui-nav .layui-nav-item{
+    line-height: 58px;
+}
+
+.layui-nav .layui-nav-active{
+    border-bottom: 2px solid #1E9FFF;
+}
