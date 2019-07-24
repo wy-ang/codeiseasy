@@ -1,11 +1,42 @@
 .layui-header {
-    background-color: #393D49
+    padding: 15px 0;
+    height: auto;
 }
 
-.layui-nav .layui-nav-item{
+.layui-nav .layui-nav-item {
     line-height: 58px;
 }
 
-.layui-nav .layui-nav-active{
+.layui-nav .layui-nav-item:last-child {
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+
+.layui-nav .layui-nav-active {
     border-bottom: 2px solid #1E9FFF;
+}
+
+.layui-form-item .global-search {
+    width: 100%;
+}
+
+.global-search .layui-form-mid.layui-word-aux {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.user-action {
+    line-height: 38px;
+    text-align: right;
+}
+
+.user-action a {
+    padding: 0 10px;
+}
+
+.user-action a:hover {
+    color: #e84848;
 }

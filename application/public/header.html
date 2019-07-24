@@ -10,10 +10,41 @@
 </head>
 <body>
 <div class="layui-header">
-    <div class="layui-logo">layui 后台布局</div>
-    <!-- 头部区域（可配合layui已有的水平导航） -->
-    <ul class="layui-nav layui-layout-left" id="menu">
-    </ul>
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <div class="layui-row">
+                    <div class="layui-col-md2">
+                        <div class="logo">
+                            我是logo^_^
+                        </div>
+                    </div>
+                    <div class="layui-col-md8">
+                        <form action="" class="layui-form">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline global-search">
+                                    <input type="text" name="globalSearchVal" id="globalSearchVal"
+                                           lay-verify="globalSearchVal" placeholder="请输入搜索内容" autocomplete="off"
+                                           class="layui-input">
+                                    <div class="layui-form-mid layui-word-aux" id="globalSearch">
+                                        <i class="layui-icon layui-icon-search"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="layui-col-md2">
+                        <div class="user-action">
+                            <a href="" class="user_login">登录</a>
+                            <a href="" class="user_register">注册</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 头部区域（可配合layui已有的水平导航） -->
+                <ul class="layui-nav" id="menu"></ul>
+            </div>
+        </div>
+    </div>
     <!--<ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
             <a href="javascript:;">
@@ -47,6 +78,7 @@
                         liArr.push('<li class="layui-nav-item"><a href=' + data[i].path + ' id=' + data[i].id + '>' + data[i].name + '</a></li>');
                     }
                 }
+                liArr.push('<li class="layui-nav-item"><a href="" id="">发文</a></li>');
                 $('#menu').html(liArr.join(''));
             }
         })

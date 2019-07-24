@@ -1,0 +1,127 @@
+.category {
+    width: 234px;
+    height: 301px;
+    background: #fafafa;
+    border: 1px solid #f0f0f0
+}
+
+.category .cate-list li {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px
+}
+
+.category .cate-list li a {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding-left: 26px;
+    background-image: url(./images/cateico.png);
+    background-repeat: no-repeat
+}
+
+.category .cate-list li a:hover {
+    color: #e84848
+}
+
+.category .cate-list li .cate1 {
+    background-position: 0 0
+}
+
+.category .cate-list li .cate1:hover {
+    background-position: 0 -50px
+}
+
+.category .cate-list li .cate12 {
+    background-position: 0 -100px
+}
+
+.category .cate-list li .cate12:hover {
+    background-position: 0 -150px
+}
+
+.category .cate-list li .cate18 {
+    background-position: 0 -200px
+}
+
+.category .cate-list li .cate18:hover {
+    background-position: 0 -250px
+}
+
+.category .cate-list li .cate22 {
+    background-position: 0 -300px
+}
+
+.category .title {
+    font-size: 16px;
+    font-family: MicrosoftYaHei;
+    font-weight: 700;
+    line-height: 52px;
+    padding-left: 21px;
+    background: #f2f2f2
+}
+
+.category .cate-list li .cate22:hover {
+    background-position: 0 -350px
+}
+
+.category .cate-list li .cate29 {
+    background-position: 0 -400px
+}
+
+.category .cate-list li .cate29:hover {
+    background-position: 0 -450px
+}
+
+.category .cate-list li .cate38 {
+    background-position: 0 -500px
+}
+
+.category .cate-list li .cate38:hover {
+    background-position: 0 -551px
+}
+
+.category .cate-list li .cate44 {
+    background-position: 0 -600px
+}
+
+.category .cate-list li .cate44:hover {
+    background-position: 0 -650px
+}
+
+.category .cate-list li .cate-all {
+    background-position: 0 -900px
+}
+
+.category .cate-list li .cate-all:hover {
+    background-position: 0 -950px
+}
+
+.news-card{
+    margin-top: 7.5px;
+    box-shadow: none;
+    border: 1px solid #f0f0f0;
+}
+
+.layui-card-header{
+    border: none;
+}
+
+.news-card .news-list li .cate {
+    color: #999;
+    letter-spacing: 1px;
+    padding-right: 4px
+}
+
+.news-card .top-news a {
+    color: #a11313;
+    font-size: 16px;
+    letter-spacing: 2px
+}
+
+.news-card .top-news a:hover {
+    color: #e84848;
+}
