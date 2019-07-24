@@ -8,14 +8,15 @@
 
 namespace app\index\model;
 
-use think\Db;
 use think\Model;
 
 class CategoryModel extends Model
 {
+    protected $name = 'category';
+
     public function categoryList()
     {
-        $categoryList = Db::name('category')->where('pid', '0')->field('id, title')->select();
+        $categoryList = $this->where('pid', '0')->field('id, title')->select();
         if (!empty($categoryList)) {
             return ['code' => 200, 'msg' => '查询成功', 'data' => $categoryList];
         }else{
