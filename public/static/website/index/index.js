@@ -1,4 +1,12 @@
-$(function () {
+layui.use('carousel', function () {
+    var carousel = layui.carousel;
+    carousel.render({
+        elem: '#test1',
+        width: '100%',
+        height: '305px',
+        arrow: 'hover'
+    });
+
     $.ajax({
         url: '../../index/index/categoryList',
         type: 'get',

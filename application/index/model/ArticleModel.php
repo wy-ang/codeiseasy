@@ -19,8 +19,8 @@ class ArticleModel extends Model
     {
         $articleList = $this->field('id,title,abstract,top')->select();
         foreach ($articleList as $key => $value) {
-            $abstract = mb_substr($value['abstract'], 0, 20, 'utf-8');
-            $articleList[$key]['abstract'] = $abstract;
+            $title = mb_substr($value['title'], 0, 12, 'utf-8');
+            $articleList[$key]['title'] = $title;
         }
         if (!empty($articleList)) {
             return ['code' => 200, 'msg' => '查询成功', 'data' => $articleList];
