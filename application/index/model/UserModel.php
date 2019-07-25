@@ -9,16 +9,16 @@
 namespace app\index\model;
 
 use app\index\controller\User;
-use think\Db;
 use think\Model;
 
 class UserModel extends Model
 {
+    protected $name = 'user';
     public function addUser($name)
     {
-        $isExist = Db::table('study_user')->where('name', $name)->find();
+        $isExist = $this->where('name', $name)->find();
         if (!$isExist) {
-            $userName = Db::table('study_user')->insert(['name' => $name]);
+            $userName = $this->insert(['name' => $name]);
             if ($userName) {
                 return ['code' => 200, 'msg' => '添加成功'];
             }
@@ -30,7 +30,7 @@ class UserModel extends Model
 
     public function getUser()
     {
-        $users = Db::table('study_user')->select();
+        $users = $this->select();
         if (!empty($users)) {
             return $users;
         }

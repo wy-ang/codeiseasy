@@ -1,0 +1,52 @@
+.edui-container {
+    box-shadow: none;
+    border-top: none;
+}
+
+.edui-container .edui-toolbar {
+    box-shadow: none;
+}
+
+.layui-input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.layui-header {
+    z-index: 1000;
+    padding: 0;
+    height: 46px;
+}
+
+.layui-header a:hover {
+    transition: all .5s;
+    -webkit-transition: all .5s
+}
+
+.layui-nav {
+    background-color: transparent;
+}
+
+.layui-nav .layui-nav-item {
+    line-height: 46px;
+}
+
+.layui-nav, .layui-nav .layui-nav-item a {
+    color: #333;
+}
+
+.layui-nav .layui-nav-item a:hover {
+    color: #333;
+}
+
+.layui-nav .layui-nav-item i {
+    padding-right: 6px;
+}
+
+.layui-layout-left {
+    left: 0;
+}
+
+.layui-layout-right .layui-nav-item {
+    cursor: pointer;
+}

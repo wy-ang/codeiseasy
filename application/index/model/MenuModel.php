@@ -8,30 +8,17 @@
 
 namespace app\index\model;
 
-use think\Db;
 use think\Model;
 
 class MenuModel extends Model
 {
+    protected $name = 'menu';
+
     public function menuList()
     {
-        $menuList = Db::name('menu')->field('id,name,path,type')->select();
+        $menuList = $this->field('id,name,path,type')->select();
         if (!empty($menuList)) {
             return ['code' => 200, 'msg' => '查询成功', 'data' => $menuList];
-        } else {
-            return ['code' => 200, 'msg' => '查询失败'];
-        }
-    }
-
-    public function articleList()
-    {
-        $articleList = Db::name('article')->field('id,title,abstract,hot')->select();
-        foreach ($articleList as $key => $value) {
-            $abstract = mb_substr($value['abstract'], 0, 20, 'utf-8');
-            $articleList[$key]['abstract'] = $abstract;
-        }
-        if (!empty($articleList)) {
-            return ['code' => 200, 'msg' => '查询成功', 'data' => $articleList];
         } else {
             return ['code' => 200, 'msg' => '查询失败'];
         }
@@ -52,7 +39,7 @@ class MenuModel extends Model
             ['id' => 10, 'title' => '系统叫我做好人', 'abstract' => '扫码领红包，扫出了一个神秘的系统。 自此李皓走上了一条做好事不留名的道路。 “那个谁，你去把政治书抄一遍，三观很重要的。” “别想着做坏事了，来来来，跟我一起去扶老人吧。” “快走快走，那边有人需要帮助！” …… 李皓看着纷纷做好事的混混，点头笑道：“世界真美好。”']
         ];
 
-        $add = Db::name('article')->insertAll($data);
+        $add = $this->saveAll($data);
         return ['code' => 200, 'msg' => '查询成功', 'data' => $add];
     }
 }

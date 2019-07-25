@@ -5,6 +5,7 @@ namespace app\index\controller;
 use think\Controller;
 use app\index\model\MenuModel;
 use app\index\model\CategoryModel;
+use app\index\model\ArticleModel;
 
 class Index extends Controller
 {
@@ -23,7 +24,7 @@ class Index extends Controller
 
     public function articleList()
     {
-        $article = new MenuModel();
+        $article = new ArticleModel();
         $data = $article->articleList();
         return json($data);
     }
