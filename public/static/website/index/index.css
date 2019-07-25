@@ -106,10 +106,6 @@
     border: 1px solid #f0f0f0;
 }
 
-.layui-card-header{
-    border: none;
-}
-
 .news-card .news-list li .cate {
     color: #999;
     letter-spacing: 1px;
@@ -124,4 +120,45 @@
 
 .news-card .top-news a:hover {
     color: #e84848;
+}
+
+.news-list li a{
+    width: 182px;
+    display: inline-flex;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.news-list li .list_icon {
+    width: 17px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    display: inline-block;
+    color: #a9aeb7;
+    margin: 5px 9px 0 0;
+    float: left;
+    overflow: hidden
+}
+
+.news-list li .list_icon.top1 {
+    background: #d32f2f;
+    color: #fff;
+    width: 16px;
+    margin-right: 10px
+}
+
+.news-list li .list_icon.top2 {
+    background: #fc7403;
+    color: #fff;
+    width: 16px;
+    margin-right: 10px
+}
+
+.news-list li .list_icon.top3 {
+    background: #f8cc1c;
+    color: #fff;
+    width: 16px;
+    margin-right: 10px
 }

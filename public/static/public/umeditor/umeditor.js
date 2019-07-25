@@ -10372,7 +10372,7 @@
 
                 $(editor.container).css({
                     width: width + 'px',
-                    height: height + 'px',
+                    height: height - 500 + 'px',
                     position: !$.IE6 ? 'fixed' : 'absolute',
                     // top: bound.top,
                     top: 84,

@@ -25,7 +25,9 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    layui.use('layer', function () {
+        var layer = layui.layer;
+
         var ue = UM.getEditor('container', {
             fullscreen: true,
             initialFrameHeight: 320
@@ -43,11 +45,11 @@
                 },
                 dataType: 'json',
                 success: function (res) {
-                    console.log(res);
+                    layer.msg(res.msg);
+                    window.location = '/';
                 }
             });
         });
-    })
+    });
 </script>
-</body>
-</html>
+{include file="../application/public/footer.html"}

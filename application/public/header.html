@@ -40,8 +40,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-fluid">
+        <div class="layui-nav">
+            <div class="layui-container">
                 <!-- 头部区域（可配合layui已有的水平导航） -->
-                <ul class="layui-nav" id="menu"></ul>
+                <ul id="menu"></ul>
             </div>
         </div>
     </div>
@@ -74,7 +80,7 @@
                     var pathname = window.location.pathname;
                     if (pathname.search(data[i].type) != -1) {
                         liArr.push('<li class="layui-nav-item layui-nav-active"><a href=' + data[i].path + ' id=' + data[i].id + '>' + data[i].name + '</a></li>');
-                    }else{
+                    } else {
                         liArr.push('<li class="layui-nav-item"><a href=' + data[i].path + ' id=' + data[i].id + '>' + data[i].name + '</a></li>');
                     }
                 }

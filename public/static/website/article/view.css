@@ -3,5 +3,11 @@
     border: 1px solid #ddd;
 }
 .layui-card-header{
+    padding: 10px 15px;
+    height: auto;
+    line-height: 1.4;
     border-bottom: 1px solid #ddd;
+}
+.info{
+    padding-top: 10px;
 }

@@ -4,11 +4,15 @@
     <div class="layui-row">
         <div class="layui-col-md12">
             <div class="layui-card">
-                <div class="layui-card-header">{$view.title}</div>
+                <div class="layui-card-header">
+                    <h2>{$view.title}</h2>
+                    <div class="info">
+                        时间：{$view.update_time}&nbsp;&nbsp;作者：{$view.author}
+                    </div>
+                </div>
                 <div class="layui-card-body">{$view.content}</div>
             </div>
         </div>
     </div>
 </div>
-</body>
-</html>
+{include file="../application/public/footer.html"}

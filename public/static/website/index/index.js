@@ -22,21 +22,11 @@ $(function () {
         dataType: 'json',
         success: function (res) {
             var data = res.data;
-            var liArrL = [];
-            var liArrR = [];
+            var liArr = [];
             for (var i = 0; i < data.length; i++) {
-                if (data[i].hot == 1) {
-                    $('#newsListLeft .top-news a').html(data[10].title + "：" + data[10].abstract);
-                    $('#newsListRight .top-news a').html(data[11].title + "：" + data[11].abstract);
-                }
-                if (i < 6) {
-                    liArrL.push('<li><span class="cate">[玄幻]</span><a href="../../index/article/view?id='+ data[i].id +'" id='+ data[i].id +'>' + data[i].title + ":" + data[i].abstract + '</a></li>');
-                } else {
-                    liArrR.push('<li><span class="cate">[玄幻]</span><a href="../../index/article/view?id='+ data[i].id +'" id='+ data[i].id +'>' + data[i].title + ":" + data[i].abstract + '</a></li>');
-                }
+                liArr.push('<li><em class="top' + data[i].top + ' list_icon">' + data[i].top + '</em><span class="cate">[玄幻]</span><a href="../../index/article/view?id=' + data[i].id + '" id=' + data[i].id + '>' + data[i].title + '</a></li>');
             }
-            $('#newsListLeft ul').html(liArrL.join(''));
-            $('#newsListRight ul').html(liArrR.join(''));
+            $('#newsList').html(liArr.join(''));
         }
     });
 });

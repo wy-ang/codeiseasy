@@ -17,7 +17,7 @@ class ArticleModel extends Model
 
     public function articleList()
     {
-        $articleList = $this->field('id,title,abstract,hot')->select();
+        $articleList = $this->field('id,title,abstract,top')->select();
         foreach ($articleList as $key => $value) {
             $abstract = mb_substr($value['abstract'], 0, 20, 'utf-8');
             $articleList[$key]['abstract'] = $abstract;
