@@ -34,9 +34,19 @@
         $('#release').click(function () {
             var title = $('#title').val();
             var content = UM.getEditor('container').getContent();
-
+            $.ajax({
+                url: '../../index/article/addArticle',
+                type: 'post',
+                data: {
+                    title: title,
+                    content: content,
+                },
+                dataType: 'json',
+                success: function (res) {
+                    console.log(res);
+                }
+            });
         });
-
     })
 </script>
 </body>

@@ -9,6 +9,7 @@
 namespace app\index\model;
 
 use think\Model;
+use think\Db;
 
 class ArticleModel extends Model
 {
@@ -28,7 +29,28 @@ class ArticleModel extends Model
         }
     }
 
-    public function addArticle(){
+    public function addArticle($title, $content)
+    {
+        $abstract = mb_substr($content, 0, 20, 'utf-8');
+        $isExist = $this->where('title', $title)->find();
+        if (!$isExist) {
+            $saveData = $this->save(['title' => $title, 'content' => $content, 'abstract' => $abstract]);
+            if ($saveData) {
+                return ['code' => 200, 'msg' => '添加成功'];
+            } else {
+                return ['code' => 202, 'msg' => '添加失败'];
+            }
+        }else{
+            return ['code' => 202, 'msg' => '文章已存在'];
+        }
+    }
+
+    public function viewArticle($id)
+    {
+        $viewArticle = $this->where('id', $id)->find();
+        if (!empty($viewArticle)) {
+            return $viewArticle->data;
+        }
 
     }
 }

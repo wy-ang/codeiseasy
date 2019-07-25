@@ -1,0 +1,7 @@
+.layui-card{
+    box-shadow: none;
+    border: 1px solid #ddd;
+}
+.layui-card-header{
+    border-bottom: 1px solid #ddd;
+}

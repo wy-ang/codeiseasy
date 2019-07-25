@@ -30,9 +30,9 @@ $(function () {
                     $('#newsListRight .top-news a').html(data[11].title + "：" + data[11].abstract);
                 }
                 if (i < 6) {
-                    liArrL.push('<li><span class="cate">[玄幻]</span><a href="">' + data[i].title + ":" + data[i].abstract + '</a></li>');
+                    liArrL.push('<li><span class="cate">[玄幻]</span><a href="../../index/article/view?id='+ data[i].id +'" id='+ data[i].id +'>' + data[i].title + ":" + data[i].abstract + '</a></li>');
                 } else {
-                    liArrR.push('<li><span class="cate">[玄幻]</span><a href="">' + data[i].title + ":" + data[i].abstract + '</a></li>');
+                    liArrR.push('<li><span class="cate">[玄幻]</span><a href="../../index/article/view?id='+ data[i].id +'" id='+ data[i].id +'>' + data[i].title + ":" + data[i].abstract + '</a></li>');
                 }
             }
             $('#newsListLeft ul').html(liArrL.join(''));
