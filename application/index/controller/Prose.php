@@ -10,7 +10,7 @@ namespace app\index\controller;
 
 use think\Controller;
 
-class Store extends Controller
+class Prose extends Controller
 {
     public function index()
     {

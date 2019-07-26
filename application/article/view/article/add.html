@@ -19,37 +19,64 @@
                 </ul>
             </div>
         </div>
-        <input type="text" name="title" id="title" class="layui-input" required lay-verify="required"
-               placeholder="请输入标题">
+        <div class="layui-row layui-form">
+            <div class="layui-col-md10">
+                <input type="text" name="title" id="title" class="layui-input" required lay-verify="required"
+                       placeholder="请输入标题">
+            </div>
+            <div class="layui-col-md2">
+                <div class="layui-input-inline">
+                    <select name="category" lay-filter="category">
+                        <option value="">请选择分类</option>
+                        {volist name="category" id="item"}
+                        <optgroup {if condition="($item.pid==0)" }label="{$item.title}"{/if}>
+                        {if condition="($item.pid!=0)"}
+                        <option value="{$item.id}">{$item.title}</option>
+                        {/if}
+                        </optgroup>
+                        {/volist}
+                    </select>
+                </div>
+            </div>
+        </div>
         <script id="container" name="content" type="text/plain"></script>
     </div>
 </div>
 <script type="text/javascript">
-    layui.use('layer', function () {
+    layui.use(['layer', 'form'], function () {
         var layer = layui.layer;
+        var form = layui.form;
+        var category = '';
+        form.render('select');
 
         var ue = UM.getEditor('container', {
             fullscreen: true,
             initialFrameHeight: 320
         });
 
+        form.on('select(category)', function (data) {
+            category = data.value;
+        });
+
         $('#release').click(function () {
             var title = $('#title').val();
             var content = UM.getEditor('container').getContent();
             $.ajax({
-                url: '../../index/article/addArticle',
+                url: '../../article/article/addArticle',
                 type: 'post',
                 data: {
                     title: title,
                     content: content,
+                    category: category
                 },
                 dataType: 'json',
                 success: function (res) {
-                    layer.msg(res.msg);
-                    window.location = '/';
+                    if (res.code==200){
+                        layer.msg(res.msg);
+                        window.location = '/';
+                    }
                 }
             });
         });
     });
 </script>
-{include file="../application/public/footer.html"}

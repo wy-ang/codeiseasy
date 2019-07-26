@@ -10,7 +10,7 @@ namespace app\index\controller;
 
 use think\Controller;
 
-class Rank extends Controller
+class Poetry extends Controller
 {
     public function index()
     {

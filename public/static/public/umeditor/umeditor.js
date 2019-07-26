@@ -10380,7 +10380,8 @@
                     margin: 0,
                     padding: 0,
                     overflowX: 'hidden',
-                    overflowY: 'hidden'
+                    overflowY: 'hidden',
+                    zIndex: 0,
                 });
 
                 $(editorBody).css({

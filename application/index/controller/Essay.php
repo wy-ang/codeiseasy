@@ -2,15 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: wyang
- * Date: 2019/7/23
- * Time: 16:14
+ * Date: 2019/7/26
+ * Time: 10:25
  */
 
 namespace app\index\controller;
 
 use think\Controller;
 
-class Finish extends Controller
+class Essay extends Controller
 {
     public function index()
     {
