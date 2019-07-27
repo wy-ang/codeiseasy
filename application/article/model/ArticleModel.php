@@ -52,21 +52,18 @@ class ArticleModel extends Model
         if (!empty($viewArticle)) {
             return $viewArticle->data;
         }
-
     }
 
     public function articleCategoryList()
     {
-        $categoryList = Db::name('category')->where('pid', '0')->field('id')->limit(4)->select();
-        $articleCategoryList = array();
-        foreach ($categoryList as $key => $value) {
-            $id = $value['id'];
-            $articleCategory = $this->where('category', $id)->field('id, title')->select();
-            $articleCategoryList[] = $articleCategory;
-            $articleCategoryList['pid'] = $id;
+        $articleList = $this->field('id,title,category')->select();
+        foreach ($articleList as $key => $value) {
+            $category = $value['category'];
+            $pid = Db::name('category')->where('id', $category)->field('pid')->select();
+            $articleList[$key]->data['pid'] = $pid[0]['pid'];
         }
-        if (!empty($articleCategoryList)){
-            return ['code' => 200, 'msg' => '查询成功', 'data' => $articleCategoryList];
+        if (!empty($articleList)) {
+            return ['code' => 200, 'msg' => '查询成功', 'data' => $articleList];
         } else {
             return ['code' => 200, 'msg' => '查询失败'];
         }

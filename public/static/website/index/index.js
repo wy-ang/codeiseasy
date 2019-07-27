@@ -36,10 +36,9 @@ layui.use(['carousel', 'form'], function () {
         dataType: 'json',
         success: function (res) {
             var data = res.data;
+            console.log(data);
             for (var i = 0; i < data.length; i++) {
-                for (var j = 0; j < data[i].length; j++) {
-                    $("#item" + data[i][j].id).append('<li><a href="../../article/article/view?id=' + data[i][j].id + '">'+ data[i][j].title +'</a></li>')
-                }
+                $("#item" + data[i].pid).append('<li><a href="../../article/article/view?id=' + data[i].id + '">' + data[i].title + '</a></li>')
             }
         }
     });
