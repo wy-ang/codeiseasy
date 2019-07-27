@@ -51,4 +51,11 @@ class Article extends Controller
         $data = $articleCategory->articleCategoryList();
         return json($data);
     }
+
+    public function addData()
+    {
+        $add = new CategoryModel();
+        $data = $add->addData();
+        return json($data);
+    }
 }
