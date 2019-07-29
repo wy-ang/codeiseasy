@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="layui-row layui-col-space15">
-        {volist name="category" id="item"}
+        {volist name="article" id="item"}
         <div class="layui-col-md4">
             <div class="card">
                 <div class="card-header">{$item.title}</div>
@@ -34,7 +34,11 @@
                         <span class="title-bg"></span>
                         <span>{$item.title}</span>
                     </div>
-                    <ul class="news-list" id="item{$item.id}"></ul>
+                    <ul class="news-list" id="">
+                        {volist name="$item.seclist" id="secItem"}
+                        <li><a href="../../article/article/view?id={$secItem.id}">{$secItem.title}</a></li>
+                        {/volist}
+                    </ul>
                 </div>
             </div>
         </div>

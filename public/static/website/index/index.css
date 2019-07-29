@@ -57,6 +57,16 @@
     height: 100%;
 }
 
+.card{
+    padding: 15px;
+    height: 420px;
+    border: 1px solid #f0f0f0;
+}
+
+.card-header{
+    padding-bottom: 15px;
+}
+
 .card-body-top {
     position: relative;
 }
@@ -83,4 +93,12 @@
     opacity: 0.6;
     background: #000;
     z-index: 1;
+}
+
+.card-body ul{
+    padding-top: 10px;
+}
+
+.card-body li{
+    line-height: 32px;
 }

@@ -45,12 +45,12 @@ class Article extends Controller
         }
     }
 
-    public function articleCategoryList()
+    /*public function articleCategoryList()
     {
         $articleCategory = new ArticleModel();
         $data = $articleCategory->articleCategoryList();
         return json($data);
-    }
+    }*/
 
     public function addData()
     {

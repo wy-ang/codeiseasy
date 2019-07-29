@@ -24,13 +24,13 @@ layui.use(['carousel', 'form'], function () {
             var data = res.data;
             var liArr = [];
             for (var i = 0; i < data.length; i++) {
-                liArr.push('<li><em class="top' + data[i].top + ' list_icon">' + data[i].top + '</em><span class="cate">[玄幻]</span><a href="../../article/article/view?id=' + data[i].id + '" id=' + data[i].id + '>' + data[i].title + '</a></li>');
+                liArr.push('<li><em class="top' + data[i].top + ' list_icon">' + data[i].top + '</em><a href="../../article/article/view?id=' + data[i].id + '" id=' + data[i].id + '>' + data[i].title + '</a></li>');
             }
             $('#newsList').html(liArr.join(''));
         }
     });
 
-    $.ajax({
+    /*$.ajax({
         url: '../../article/article/articleCategoryList',
         type: 'get',
         dataType: 'json',
@@ -41,5 +41,5 @@ layui.use(['carousel', 'form'], function () {
                 $("#item" + data[i].pid).append('<li><a href="../../article/article/view?id=' + data[i].id + '">' + data[i].title + '</a></li>')
             }
         }
-    });
+    });*/
 });

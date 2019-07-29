@@ -16,7 +16,7 @@ class CategoryModel extends Model
 
     public function categoryList()
     {
-        $categoryList = $this->where('pid', '0')->field('id, title')->limit(4)->select();
+        $categoryList = $this->where('pid', '0')->field('id, title')->select();
         if (!empty($categoryList)) {
             return $categoryList;
         } else {
