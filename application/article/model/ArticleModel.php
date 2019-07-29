@@ -64,7 +64,7 @@ class ArticleModel extends Model
             $pid = $value['pid'];
             $article['pid'] = $pid;
             $ptitle = Db::name('category')->where('id', $pid)->field('title')->select();
-            $article['seclist'] = $this->where('category', $id)->field('id, title, category')->select();
+            $article['seclist'] = $this->where('category', $id)->field('id, title, category')->limit('7')->select();
             if (!empty($ptitle)) {
                 $article['title'] = $ptitle[0]['title'];
             }

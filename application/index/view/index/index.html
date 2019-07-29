@@ -32,11 +32,13 @@
                     <div class="card-body-top">
                         <img src="__WEBSITE__/index/images/20190725_162205.jpg" alt="">
                         <span class="title-bg"></span>
-                        <span>{$item.title}</span>
+                        <span><a href="../../article/article/view?id={$item['seclist'][0]['id']}">{$item['seclist'][0]['title']}</a></span>
                     </div>
                     <ul class="news-list" id="">
                         {volist name="$item.seclist" id="secItem"}
+                        {if condition="$secItem.id!=$item['seclist'][0]['id']"}
                         <li><a href="../../article/article/view?id={$secItem.id}">{$secItem.title}</a></li>
+                        {/if}
                         {/volist}
                     </ul>
                 </div>

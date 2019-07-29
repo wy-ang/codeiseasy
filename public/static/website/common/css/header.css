@@ -1,6 +1,11 @@
-html,body{
+html, body {
     font-family: MicrosoftYaHei;
 }
+
+a:hover {
+    color: #1E9FFF !important;
+}
+
 em {
     font-weight: 400;
     font-style: normal;
@@ -11,7 +16,7 @@ em {
     height: auto;
 }
 
-.layui-header .layui-fluid{
+.layui-header .layui-fluid {
     padding: 0;
 }
 
@@ -26,11 +31,20 @@ em {
 }
 
 .layui-nav .layui-nav-active {
-    border-bottom: 2px solid #1E9FFF;
+    /*border-bottom: 2px solid #1E9FFF;*/
+    background: #1E9FFF;
+}
+
+.layui-nav .layui-nav-active a, .layui-nav .layui-nav-active a:hover {
+    color: #FFF !important;
 }
 
 .layui-form-item .global-search {
     width: 100%;
+}
+
+.layui-nav .layui-nav-item a {
+    font-size: 18px;
 }
 
 .global-search .layui-form-mid.layui-word-aux {

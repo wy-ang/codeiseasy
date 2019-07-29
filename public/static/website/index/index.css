@@ -1,6 +1,6 @@
 .news-card {
     box-shadow: none;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #ddd;
 }
 
 .news-card .news-list li .cate {
@@ -59,12 +59,13 @@
 
 .card{
     padding: 15px;
-    height: 420px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #ddd;
 }
 
-.card-header{
+.card-header,.layui-card-header{
     padding-bottom: 15px;
+    font-size: 18px;
+    color: #1E9FFF;
 }
 
 .card-body-top {
@@ -76,7 +77,7 @@
     height: 100%;
 }
 
-.card-body-top span {
+.card-body-top span{
     display: inline-block;
     padding-left: 12px;
     position: absolute;
@@ -85,8 +86,11 @@
     width: calc(100% - 12px);
     height: 30px;
     line-height: 30px;
-    color: #FFF;
     z-index: 2;
+}
+
+.card-body-top span a{
+    color: #FFF;
 }
 
 .card-body-top span.title-bg {
@@ -101,4 +105,8 @@
 
 .card-body li{
     line-height: 32px;
+}
+
+.layui-card-header{
+    padding-bottom: 0;
 }

@@ -78,7 +78,8 @@
                 var liArr = [];
                 for (var i = 0; i < data.length; i++) {
                     var pathname = window.location.pathname;
-                    if (pathname.search(data[i].type) != -1) {
+                    var currentPathName = pathname.match(/\/(\S*)\//)[1].match(/\/(\S*)/)[1];
+                    if (data[i].type == currentPathName) {
                         liArr.push('<li class="layui-nav-item layui-nav-active"><a href=' + data[i].path + ' id=' + data[i].id + '>' + data[i].name + '</a></li>');
                     } else {
                         liArr.push('<li class="layui-nav-item"><a href=' + data[i].path + ' id=' + data[i].id + '>' + data[i].name + '</a></li>');
