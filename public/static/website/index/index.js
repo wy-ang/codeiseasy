@@ -29,17 +29,4 @@ layui.use(['carousel', 'form'], function () {
             $('#newsList').html(liArr.join(''));
         }
     });
-
-    /*$.ajax({
-        url: '../../article/article/articleCategoryList',
-        type: 'get',
-        dataType: 'json',
-        success: function (res) {
-            var data = res.data;
-            console.log(data);
-            for (var i = 0; i < data.length; i++) {
-                $("#item" + data[i].pid).append('<li><a href="../../article/article/view?id=' + data[i].id + '">' + data[i].title + '</a></li>')
-            }
-        }
-    });*/
 });

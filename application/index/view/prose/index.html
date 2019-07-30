@@ -1,3 +1,18 @@
 {include file="../application/public/header.html"}
-散文
+<link rel="stylesheet" href="__WEBSITE__/prose/prose.css">
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                {volist name="prose" id="item"}
+                <div class="layui-card-header">
+                    <span class="category">[{$item.name}]</span>
+                    <a href="../../article/article/view?id={$item.article_id}">{$item.title}</a>
+                    <span class="time layui-layout-right">{$item.update_time}</span>
+                </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+</div>
 {include file="../application/public/footer.html"}

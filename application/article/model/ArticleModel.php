@@ -56,17 +56,44 @@ class ArticleModel extends Model
 
     public function articleCategoryList()
     {
-        $id = Db::name('category')->where('pid' != 0)->group('pid')->field('id,pid,title')->select();
+        /*$arrId = array();
+        $arrCategory = array();
+        $arrSecCategory = array();*/
         $article = array();
         $articleList = array();
-        foreach ($id as $key => $value) {
+//        $articleLists = array();
+        $secCategory = Db::name('category')->where('pid != 0')->group('pid')->field('id, pid, name')->select();
+        /*$category = Db::name('category')->where('pid = 0')->field('id, title')->select();
+        foreach ($secCategory as $key => $value) {
+            $arrId[] = $value['id'];
+            $arrSecCategory[] = $value;
+        }
+        $articles = $this->whereIn('category', $arrId)->field('id, title, category')->select();
+        foreach ($category as $key => $value) {
+            $arrCategory[] = $value;
+        }
+        foreach ($articles as $key => $value) {
+            $article[] = $value->data;
+        }
+        foreach ($articles as $key => $value) {
+            $category = $value->data['category'];
+            foreach ($arrSecCategory as $kk => $vv) {
+                $secCategory = $vv['id'];
+                if ($category == $secCategory) {
+                    $articleList['id'] = $vv['pid'];
+                    $articleList['seclist'] = $value;
+                    $articleLists[] = $articleList;
+                }
+            }
+        }*/
+        foreach ($secCategory as $key => $value) {
             $id = $value['id'];
             $pid = $value['pid'];
             $article['pid'] = $pid;
-            $ptitle = Db::name('category')->where('id', $pid)->field('title')->select();
+            $ptitle = Db::name('category')->where('id', $pid)->field('name')->select();
             $article['seclist'] = $this->where('category', $id)->field('id, title, category')->limit('7')->select();
             if (!empty($ptitle)) {
-                $article['title'] = $ptitle[0]['title'];
+                $article['name'] = $ptitle[0]['name'];
             }
             if (!empty($article['seclist'])) {
                 $articleList[] = $article;
@@ -74,6 +101,25 @@ class ArticleModel extends Model
         }
         if (!empty($articleList)) {
             return $articleList;
+        } else {
+            return ['code' => 200, 'msg' => '查询失败'];
+        }
+    }
+
+    public function articleList($pid)
+    {
+        $secCategory = Db::name('category')->where('pid', $pid)->field('id')->select();
+        $arrId = array();
+        foreach ($secCategory as $key => $value) {
+            $arrId[] = $value['id'];
+        }
+        $list = $this->whereIn('category', $arrId)
+            ->alias('a')
+            ->join('category c', 'a.category = c.id', 'LEFT')
+            ->field('a.id as article_id, a.title, a.author,a.update_time, c.name')
+            ->select();
+        if (!empty($list)) {
+            return $list;
         } else {
             return ['code' => 200, 'msg' => '查询失败'];
         }

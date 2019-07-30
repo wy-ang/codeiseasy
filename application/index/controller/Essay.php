@@ -9,11 +9,15 @@
 namespace app\index\controller;
 
 use think\Controller;
+use app\article\model\ArticleModel;
 
 class Essay extends Controller
 {
     public function index()
     {
+        $articleCategory = new ArticleModel();
+        $data = $articleCategory->articleList(14);
+        $this->assign('essay', $data);
         return $this->fetch();
     }
 }
