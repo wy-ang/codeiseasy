@@ -124,4 +124,13 @@ class ArticleModel extends Model
             return ['code' => 200, 'msg' => '查询失败'];
         }
     }
+
+    public function globalSearch($value){
+        $list = $this->where('title','like','%'.$value.'%')
+            ->alias('a')
+            ->join('category c', 'a.category = c.id', 'LEFT')
+            ->field('a.id as article_id, a.title, a.author,a.update_time, c.name')
+            ->select();
+        return $list;
+    }
 }

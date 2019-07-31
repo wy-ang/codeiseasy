@@ -10,11 +10,6 @@ layui.use(['carousel', 'form'], function () {
         arrow: 'hover'
     });
 
-    //搜索
-    $('#globalSearch').click(function () {
-
-    });
-
     // 排行榜
     $.ajax({
         url: '../../index/index/rankList',

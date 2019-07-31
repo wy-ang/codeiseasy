@@ -8,7 +8,7 @@
         <div class="layui-header">
             <div class="layui-nav layui-layout-left">
                 <ul>
-                    <li class="layui-nav-item"><a href="/">首页</a></li>
+                    <li class="layui-nav-item"><a href="/index/index/index">首页</a></li>
                 </ul>
             </div>
             <div class="layui-nav layui-layout-right">
@@ -20,18 +20,18 @@
             </div>
         </div>
         <div class="layui-row layui-form">
-            <div class="layui-col-md10">
+            <div class="layui-col-md11">
                 <input type="text" name="title" id="title" class="layui-input" required lay-verify="required"
                        placeholder="请输入标题">
             </div>
-            <div class="layui-col-md2">
+            <div class="layui-col-md1">
                 <div class="layui-input-inline">
                     <select name="category" lay-filter="category">
                         <option value="">请选择分类</option>
                         {volist name="category" id="item"}
-                        <optgroup {if condition="($item.pid==0)" }label="{$item.title}"{/if}>
+                        <optgroup {if condition="($item.pid==0)" }label="{$item.name}"{/if}>
                         {if condition="($item.pid!=0)"}
-                        <option value="{$item.id}">{$item.title}</option>
+                        <option value="{$item.id}">{$item.name}</option>
                         {/if}
                         </optgroup>
                         {/volist}
@@ -73,7 +73,7 @@
                 success: function (res) {
                     if (res.code==200){
                         layer.msg(res.msg);
-                        window.location = '/';
+                        window.location = '/index/index/index';
                     }
                 }
             });

@@ -89,6 +89,12 @@
                 liArr.push('<li class="layui-nav-item"><a href="../../article/article/add" id="">发文</a></li>');
                 $('#menu').html(liArr.join(''));
             }
-        })
+        });
+
+        //搜索
+        $('#globalSearch').click(function () {
+            var globalSearchVal = $('#globalSearchVal').val();
+            window.location = '../../index/search/index?globalSearchVal=' + globalSearchVal
+        });
     });
 </script>

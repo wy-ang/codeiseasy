@@ -26,7 +26,7 @@ class CategoryModel extends Model
 
     public function getCategory()
     {
-        $category = $this->field('id, pid, title')->select();
+        $category = $this->field('id, pid, name')->select();
         if (!empty($category)) {
             return $category;
         } else {

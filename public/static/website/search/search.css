@@ -1,0 +1,10 @@
+.layui-card {
+    box-shadow: none;
+}
+
+.empty {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    line-height: 300px;
+}

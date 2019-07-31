@@ -71,3 +71,11 @@ em {
     padding: 30px 0;
     text-align: center;
 }
+
+.layui-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
